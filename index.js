@@ -18,7 +18,7 @@ app.use(expressMongoDb('mongodb://localhost/escambo'));
 
 // Inicializando o servidor
 app.listen(3000, () => {
-    console.log('Servidor ligado. Acesse em http://localhost:3000');
+    console.log('Servidor ligado. Acesse em http://45.55.82.101:3000');
 });
 
 // Endpoints / Rotas
@@ -26,9 +26,9 @@ app.listen(3000, () => {
 //Usuarios
 app.get('/api/usuarios', usuariosController.listar);
 app.get('/api/usuarios/:id', usuariosController.listaUm);
-app.post('/api/usuarios/usuario', usuariosController.criar);
-app.put('/api/usuarios/usuario/:id', usuariosController.atualizar);
-app.delete('/api/usuarios/usuario/:id', usuariosController.deletar);
+app.post('/api/usuarios/criar', usuariosController.criar);
+app.put('/api/usuarios/atualizar/:id', usuariosController.atualizar);
+app.delete('/api/usuarios/deletar/:id', usuariosController.deletar);
 
 //Servicos
 app.get('/api/servicos', servicosController.listar);

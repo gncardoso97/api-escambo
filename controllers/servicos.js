@@ -7,7 +7,7 @@ exports.listar = (req, res) => {
             res.send(err);
         }
         else{
-            res.send(result);
+            res.send(result.pretty());
         }
     });
 }

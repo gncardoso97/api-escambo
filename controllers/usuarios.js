@@ -62,3 +62,14 @@ exports.deletar = (req, res) => {
     });
 }
 
+//função de login
+exports.login = (req,res) => {
+    req.db.collection('usuarios').findOne({"_id" : req.body.id , "senha" : req.body.senha}, function (err, result){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.send(result);
+        }
+    });
+}

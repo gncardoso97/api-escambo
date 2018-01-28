@@ -36,3 +36,6 @@ app.get('/api/servicos/:id', servicosController.listaUm);
 app.post('/api/servicos/criar', servicosController.criar);
 app.put('/api/servicos/atualizar/:id', servicosController.atualizar);
 app.delete('/api/servicos/deletar/:id', servicosController.deletar);
+
+//login
+app.post('/api/usuarios/login', usuariosController.login);

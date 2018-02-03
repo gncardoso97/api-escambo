@@ -2,12 +2,13 @@ const ObjectID = require('mongodb').ObjectID;
 
 // Função para listar todos os servicos que estão no banco de dados na coleção 'servicos'
 exports.listar = (req, res) => {
-    req.db.collection('servicos').find().foreach(function(servico){servico.usuario = req.db.collection('servicos').findOne({"_id": servico.id_prestador}) }).toArray((err, result) => {
+    req.db.collection('servicos').find().toArray((err, result) => {
         if(err){
             res.send(err);
         }
         else{
-            res.send(result);
+            var resultado = result.foreach(function(servico){servico.usuario = req.db.collection('servicos').findOne({"_id": servico.id_prestador}) })
+            res.send(resultado);
         }
     });
 }

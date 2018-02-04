@@ -15,11 +15,9 @@ exports.listar = (req, res) => {
      ]).toArray((err, result) => {
         if(err){
             res.send(err);
-            req.db.close();
         }
         else{
             res.send(result);
-            req.db.close();
         }
     });
 }
@@ -29,11 +27,9 @@ exports.listaUm = (req, res) => {
     req.db.collection('servicos').findOne({"_id" : req.params.id}).then(function(result) {
         if(!result){
             res.send(err);
-            req.db.close();
         }
         else{
             res.send(result);
-            req.db.close();
         }
     });
 }
@@ -43,11 +39,9 @@ exports.criar = (req, res) => {
     req.db.collection('servicos').insert(req.body, (err, result) => {
         if(err){
             res.send(err);
-            req.db.close();
         }
         else{
             res.sendStatus(201);
-            req.db.close();
         }
     });
 }
@@ -58,11 +52,9 @@ exports.atualizar = (req, res) => {
     req.db.collection('servicos').update({"_id": id}, req.body, (err, result) => {
         if(err){
             res.send(err);
-            req.db.close();
         }
         else{
             res.sendStatus(200);
-            req.db.close();
         }
     });
 }
@@ -73,11 +65,9 @@ exports.deletar = (req, res) => {
     req.db.collection('servicos').remove({"_id": id}, (err, result) => {
         if(err){
             res.send(err);
-            req.db.close();
         }
         else{
             res.sendStatus(200);
-            req.db.close();
         }
     });
 }

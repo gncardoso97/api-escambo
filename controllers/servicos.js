@@ -7,8 +7,8 @@ exports.listar = (req, res) => {
             res.send(err);
         }
         else{
-            var resultado = result.foreach(function(servico){servico.usuario = req.db.collection('servicos').findOne({"_id": servico.id_prestador}) })
-            res.send(resultado);
+            // var resultado = result.foreach(function(servico){servico.usuario = req.db.collection('servicos').findOne({"_id": servico.id_prestador}) })
+            res.send(result);
         }
     });
 }

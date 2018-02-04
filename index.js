@@ -15,9 +15,9 @@ app.use(bodyParser.json());
 
 // Conecta a nossa api ao banco de dados
 //PRD
-    // app.use(expressMongoDb('mongodb://localhost/escambo'));
+    app.use(expressMongoDb('mongodb://localhost/escambo'));
 //DEV
-    app.use(expressMongoDb('mongodb://localhost:27017/escambo'));
+    // app.use(expressMongoDb('mongodb://localhost:27017/escambo'));
 // Inicializando o servidor
 app.listen(3000, () => {
     console.log('Servidor ligado. Acesse em http://45.55.82.101:3000');

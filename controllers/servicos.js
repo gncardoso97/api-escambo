@@ -49,7 +49,7 @@ exports.criar = (req, res) => {
 exports.atualizar = (req, res) => {
     let id = req.params.id;
 
-    req.db.collection('servicos').update({"_id": id}, req.body, (err, result) => {
+    req.db.collection('servicos').update({"_id": id}, {$set: req.body}, (err, result) => {
         if(err){
             res.send(err);
         }
